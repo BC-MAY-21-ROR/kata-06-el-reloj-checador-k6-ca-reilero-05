@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  check_datetime: 2022-09-05 17:35:08
+  action: MyString
+  employee: one
+
+two:
+  check_datetime: 2022-09-05 17:35:08
+  action: MyString
+  employee: two
