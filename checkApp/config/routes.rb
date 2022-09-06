@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  namespace :admin do
+      resources :attendances
+      resources :employees
+      resources :stores
+
+      root to: "attendances#index"
+    end
   resources :attendances
   resources :employees
   resources :stores
