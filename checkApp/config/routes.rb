@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
+  
+  namespace :users do
+    root to: "admin/attendances#index"
+  end 
+
   namespace :admin do
       resources :attendances
       resources :employees
