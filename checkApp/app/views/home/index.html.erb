@@ -28,15 +28,11 @@
   >
     <p data-controller="hello" class="text-5xl font-bold tracking-tight text-gray-900 px-5 my-7"></p>
     <div class="">
-      <form action="post" class="flex flex-col items-center my-16">
-        <label for="" class="mb-3">Private Number</label>
-        <input type="text" class="mb-4 relative block w-full appearance-none rounded-xl border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm">
-        <button 
-          class="group relative flex w-full justify-center rounded-md border border-transparent bg-green-600 py-2 px-4 text-sm font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-        >
-          Check
-        </button>
-      </form>
+    <%= form_with url: "/home#make_attendance", method: :post, :class => "flex flex-col items-center my-16" do |form| %>
+      <%= form.label :secret_number, "Numero privado:" %>
+      <%= form.text_field :secret_number, :class => "mb-4 relative block w-full appearance-none rounded-xl border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" %>
+      <%= form.submit :class => "group relative flex w-full justify-center rounded-md border border-transparent bg-green-600 py-2 px-4 text-sm font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2" "Check" %>
+    <% end %>    
     </div>
   </div>
 </div>
