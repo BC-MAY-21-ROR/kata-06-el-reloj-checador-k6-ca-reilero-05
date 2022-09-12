@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   # resources :employees
   # resources :stores
   root 'home#index'
+
+  post '/check', to: "home#check"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
