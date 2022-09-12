@@ -2,22 +2,14 @@ class HomeController < ApplicationController
   def index
   end
 
-  def make_attendance
+  def check
     employee = Employee.find_by(secret_number: params[:secret_number])
     if employee
-      if employee.presence
-        employee.attendances.create(check_datetime: params[:data], action: 'checkout')
-      else
-        employee.attendances.create(check_datetime: params[:data], action: 'checkin')
-      end
-      employee.presence = !employee.presence
-      employee.update
-      format.html { redirect_to new_user_session_path, notice: "Attendance was successfully created." }
+      employee.attendances.create(check_datetime: params[:data], action: employee.presence ? 'checkout' : 'checkin')
+      employee.update(presence: !employee.presence)
+      redirect_to '/', flash: { msg: "You have successfully checked." }
     else
-      # No esta
-      # Muestro un mensaje de error, codigo invalido
-      format.html { redirect_to home_path, notice: "Invalid code." }
-      format.json { render :index}
+      redirect_to '/', flash: { msg: "Invalid secret number." }
     end
   end
 end
