@@ -6,10 +6,14 @@ By default, the navigation contains navigation links
 for all resources in the admin dashboard,
 as defined by the routes in the `admin/` namespace
 %>
-
+<style>
+.buttonhome:hover{
+  background-color: #145ea8 !important;
+}
+</style>
 <nav class="navigation" role="navigation">
-  <%= link_to "Sign Out", destroy_user_session_path, method: :delete, :class => "button button--danger button--nav" %>
-  <!-- <%= link_to(t("administrate.navigation.back_to_app"), root_url, class: "button button--alt button--nav") if defined?(root_url) %> -->
+  <%= link_to "Sign Out", destroy_user_session_path, method: :delete, :class => "button button--danger button--nav", style: "width: 100%; text-align: center;" %>
+  <%= link_to(t("administrate.navigation.back_to_app"), root_url, class: "button buttonhome button--alt button--nav", style: "background-color: #1976d2; color: white;") if defined?(root_url) %>
 
   <% Administrate::Namespace.new(namespace).resources_with_index_route.each do |resource| %>
     <%= link_to(
