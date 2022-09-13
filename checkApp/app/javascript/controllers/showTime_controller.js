@@ -6,7 +6,9 @@ export default class extends Controller {
 
     const Clock = () => {
       var d = new Date();
-      this.element.textContent = d.toLocaleTimeString();
+      this.element.textContent = d.toLocaleTimeString('en-US', {
+        hour12: false,
+      });
     }
 
     Clock()

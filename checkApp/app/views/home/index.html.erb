@@ -21,22 +21,36 @@
     </div>
   </nav>
 </header>
+
+<style>
+  .error, .success {
+    text-align: center;
+    margin-top: 0.5rem;
+  }
+
+  .error {
+    color: red;
+  }
+
+  .success {
+    color: green;
+  }
+</style>
+
 <div class="flex">
   <div 
     class="mx-auto rounded-xl bg-gray-300 px-7 flex flex-col items-center self-center"
-    style="width: 300px; border-radius: 15px; background: #fff; box-shadow:  13px 13px 26px #d0d0d0, -13px -13px 26px #ffffff;"
+    style="width: 300px; height: 400px; border-radius: 15px; background: #fff; box-shadow:  13px 13px 26px #d0d0d0, -13px -13px 26px #ffffff;"
   >
     <p data-controller="showTime" class="text-5xl font-bold tracking-tight text-gray-900 px-5 my-7"></p>
-    <div class="">
-    <%= form_with url: "/check", method: :post, :class => "flex flex-col items-center my-16" do |form| %>
+    <div>
+      <%= form_with url: "/check", method: :post, :class => "flex flex-col items-center my-16" do |form| %>
         <%= form.hidden_field :data, "data-controller".to_sym => "datetime" %>
-        <% flash.each do |name, msg| -%>
-          <%= content_tag :div, msg, class: name, "data-controller".to_sym => "flash"%>
-        <% end -%>
-      <%= form.label :secret_number, "Numero privado:" %>
-      <%= form.text_field :secret_number, :class => "mb-4 relative block w-full appearance-none rounded-xl border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" %>
-      <%= form.submit :class => "group relative flex w-full justify-center rounded-md border border-transparent bg-green-600 py-2 px-4 text-sm font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2" "Check" %>
-    <% end %>    
+        <%= form.label :secret_number, "Numero privado:", style: "margin-bottom: 0.5rem;" %>
+        <%= form.text_field :secret_number, :class => "mb-4 relative block w-full appearance-none rounded-xl border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" %>
+        <%= form.submit :class => "group relative flex w-full justify-center rounded-md border border-transparent bg-green-600 py-2 px-4 text-sm font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2" "Check" %>
+        <%= content_tag :div, flash[:msg], class: flash[:class], style: "width: 225px;", "data-controller".to_sym => "flash"%>
+      <% end %>    
     </div>
   </div>
 </div>
