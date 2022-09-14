@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
       resources :attendances
-      resources :employees
+      resources :employees, only: [:index,:new, :edit, :show]
       resources :stores
 
       root to: "attendances#index"

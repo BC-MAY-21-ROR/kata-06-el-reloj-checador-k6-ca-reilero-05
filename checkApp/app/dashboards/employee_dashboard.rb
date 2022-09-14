@@ -31,6 +31,7 @@ class EmployeeDashboard < Administrate::BaseDashboard
     attendances
     email
     name
+    status
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -46,7 +47,6 @@ class EmployeeDashboard < Administrate::BaseDashboard
     status
     store
     created_at
-    updated_at
   ].freeze
 
   # FORM_ATTRIBUTES
