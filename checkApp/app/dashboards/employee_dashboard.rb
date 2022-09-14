@@ -28,10 +28,10 @@ class EmployeeDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
     id
-    attendances
-    email
     name
+    email
     status
+    attendances
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
