@@ -13,9 +13,9 @@ class EmployeeDashboard < Administrate::BaseDashboard
     email: Field::String,
     name: Field::String,
     position: Field::String,
-    presence: Field::Boolean,
+    presence: PresenceField,
     secret_number: Field::String,
-    status: Field::Boolean,
+    status: StatusField,
     store: Field::BelongsTo,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
@@ -28,9 +28,10 @@ class EmployeeDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
     id
-    attendances
-    email
     name
+    email
+    status
+    attendances
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -46,7 +47,6 @@ class EmployeeDashboard < Administrate::BaseDashboard
     status
     store
     created_at
-    updated_at
   ].freeze
 
   # FORM_ATTRIBUTES
