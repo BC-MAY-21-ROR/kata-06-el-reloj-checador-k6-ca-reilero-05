@@ -5,7 +5,7 @@ class HomeController < ApplicationController
   def check
     employee = Employee.find_by(secret_number: params[:secret_number])
     if employee && employee.status
-      employee.attendances.create(check_datetime: params[:data], action: employee.presence ? 'checkout' : 'checkin')
+      employee.attendances.create(check_datetime: Time.zone.now, action: employee.presence ? 'checkout' : 'checkin')
       employee.update(presence: !employee.presence)
       redirect_to '/', flash: { msg: "You have successfully checked.", class: 'success' }
     elsif employee
