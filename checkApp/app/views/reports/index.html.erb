@@ -1,0 +1,14 @@
+<div>
+  <h1>Attendance by day</h1>
+  <%= line_chart @attendances.group_by_day(:check_datetime).count %>
+</div>
+
+<div>
+  <h1>Average time employees checked in/out by month</h1>
+</div>
+
+<div>
+  <h1>Absence report by month</h1>
+</div>
+
+

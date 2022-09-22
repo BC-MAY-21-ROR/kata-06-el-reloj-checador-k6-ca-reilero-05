@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'reports/index'
   devise_for :users
   
   namespace :users do
