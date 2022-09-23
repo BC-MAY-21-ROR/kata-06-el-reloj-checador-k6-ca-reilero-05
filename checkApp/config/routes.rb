@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'reports/index'
   devise_for :users
   
   namespace :users do
@@ -10,12 +9,10 @@ Rails.application.routes.draw do
       resources :attendances
       resources :employees, only: [:index, :new, :create, :edit, :update, :show]
       resources :stores, only: [:index, :new, :create, :edit, :update, :show]
-
+      resources :reports, only: [:index]
       root to: "attendances#index"
     end
-  # resources :attendances
-  # resources :employees
-  # resources :stores
+    
   root 'home#index'
 
   post '/check', to: "home#check"

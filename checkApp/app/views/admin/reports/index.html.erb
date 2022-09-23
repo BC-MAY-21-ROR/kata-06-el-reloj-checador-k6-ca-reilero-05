@@ -1,0 +1,19 @@
+<%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
+<script src="https://cdn.tailwindcss.com"></script>
+<div class="container p-12">
+
+  <h1 class="text-4xl">Reports</h1>
+
+  <div class="chart1">
+    <h2 class="text-2xl my-8">Attendance by day</h2>
+    <%= line_chart @attendances.group_by_day(:check_datetime).count %>
+  </div>
+
+  <div class="chart2">
+    <h2 class="text-2xl my-8">Average time employees checked in/out by month</h2>
+  </div>
+
+  <div class="chart3">
+    <h2 class="text-2xl my-8">Absence report by month</h2>
+  </div>
+</div>
