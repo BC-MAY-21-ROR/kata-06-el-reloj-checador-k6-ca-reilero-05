@@ -5,15 +5,30 @@
   <h1 class="text-4xl">Reports</h1>
 
   <div class="chart1">
-    <h2 class="text-2xl my-8">Attendance by day</h2>
-    <%= line_chart @attendances.group_by_day(:check_datetime).count %>
+    <h2 class="text-2xl my-8 text-center">Attendance by day</h2>
+    <div class="mx-auto max-w-sm py-8 rounded overflow-hidden shadow-lg bg-green-500/50 text-center">
+      <div class="px-6 py-4">
+        <div class="font-bold text-xl mb-2"><%= @date.strftime("%A") %></div>
+        <p class="text-gray-700 text-base">
+          <%= @attendances %> Attendances
+        </p>
+      </div>
+    </div>
   </div>
 
   <div class="chart2">
-    <h2 class="text-2xl my-8">Average time employees checked in/out by month</h2>
+    <h2 class="text-2xl my-8 text-center">Average time employees checked in/out by month</h2>
   </div>
 
   <div class="chart3">
-    <h2 class="text-2xl my-8">Absence report by month</h2>
+    <h2 class="text-2xl my-8 text-center">Absence report by month</h2>
+    <div class="mx-auto max-w-sm py-8 rounded overflow-hidden shadow-lg bg-sky-500/50 text-center">
+      <div class="px-6 py-4">
+        <div class="font-bold text-xl mb-2"><%= @date.strftime("%B") %></div>
+        <p class="text-gray-700 text-base">
+          <%= @result_absence %> Absences
+        </p>
+      </div>
+    </div>
   </div>
 </div>
