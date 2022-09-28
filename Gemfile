@@ -69,6 +69,9 @@ gem "chartkick"
 # The simplest way to group by: day, week, hour of the day and more (complete list below)
 gem "groupdate"
 
+# Sass 
+gem 'sass'
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
