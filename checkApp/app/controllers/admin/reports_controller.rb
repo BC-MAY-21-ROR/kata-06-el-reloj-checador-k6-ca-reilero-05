@@ -3,11 +3,16 @@ module Admin
     def index
       @attendances = Attendance.where("action = 'checkin'").count
       @date = Date.today
+      @result_absence = absences
+    end
 
+    private
+
+    def absences
       @absence = Attendance.where("action = 'checkout'").size
       @time = Time.zone.now
       @days = @time.end_of_month.day
-      @result_absence = @days - @absence
+      @days - @absence
     end
   end
 end
