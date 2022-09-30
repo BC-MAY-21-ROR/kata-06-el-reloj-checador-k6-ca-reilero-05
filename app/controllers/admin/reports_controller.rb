@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Admin
   class ReportsController < Admin::ApplicationController
     def index
@@ -17,14 +19,13 @@ module Admin
       days - absence
     end
 
-    private
-
     def average_time(action)
       check_actions = Attendance.where("action = '#{action}'").select do |attendance|
         attendance.check_datetime.month == Time.now.month
       end
-      total_time = check_actions.map {|attendance|
-        attendance.check_datetime.to_i}.sum
+      total_time = check_actions.map do |attendance|
+        attendance.check_datetime.to_i
+      end.sum
       average = total_time / check_actions.size
       Time.at(average)
     end

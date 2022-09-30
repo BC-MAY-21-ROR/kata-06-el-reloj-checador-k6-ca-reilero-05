@@ -1,3 +1,4 @@
+![Rubycritic Score](badges/rubycritic_badge_score.svg)
 ![BrightCoders Logo](img/logo-bc.png)
 
 # Reloj Checador App
@@ -67,6 +68,17 @@ The attendance web app must meet the following reuqirements:
 
 ## Setup
 En [este elnace](setup/README.md) se describen los pasos necesarios para ejecutar/probar este proyecto, así como los integrantes de este equipo
+
+## Integrantes
+
+- Elio Flores
+- Eduardo Briceno
+- Jorge Ramirez
+
+- Cuando se clona el repositorio,tiene que hacer un bundle install para instalar las gemas
+- Una vez hecho el bundle install, hay que crear las tablas con el comando bin/rails db:create
+- Despues migramos las tablas con el comando: bin/rails db:migrate
+- Para poder ingresar al admin, solo falta que se cree el usuario y contrasena en la consola de rails, por ejemplo: User.create!(password: 'testuser', password_confirmation: 'testuser', email: 'admin@example.com')
 
 ## Enlaces
 [Encuentra aquí una lista completa de recursos de ayuda](https://brightcoder.gitbook.io/handbook/ruby-on-rails)

@@ -245,6 +245,8 @@ GEM
     regexp_parser (2.5.0)
     reline (0.3.1)
       io-console (~> 0.5)
+    repo-small-badge (0.2.7)
+      victor (~> 0.2.8)
     responders (3.0.1)
       actionpack (>= 5.0)
       railties (>= 5.0)
@@ -262,6 +264,8 @@ GEM
       simplecov (>= 0.17.0)
       tty-which (~> 0.4.0)
       virtus (~> 1.0)
+    rubycritic-small-badge (0.2.1)
+      repo-small-badge (~> 0.2.7)
     rubyzip (2.3.2)
     sass (3.7.4)
       sass-listen (~> 4.0.0)
@@ -314,6 +318,7 @@ GEM
       railties (>= 6.0.0)
     tzinfo (2.0.5)
       concurrent-ruby (~> 1.0)
+    victor (0.2.8)
     virtus (1.0.5)
       axiom-types (~> 0.1)
       coercible (~> 1.0)
@@ -356,7 +361,9 @@ DEPENDENCIES
   pry
   puma (~> 5.0)
   rails (~> 7.0.3, >= 7.0.3.1)
+  rake
   rubycritic
+  rubycritic-small-badge
   sass
   selenium-webdriver
   sprockets-rails
