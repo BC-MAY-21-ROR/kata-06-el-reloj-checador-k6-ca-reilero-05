@@ -1,4 +1,6 @@
-require "administrate/base_dashboard"
+# frozen_string_literal: true
+
+require 'administrate/base_dashboard'
 
 class EmployeeDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
@@ -18,7 +20,7 @@ class EmployeeDashboard < Administrate::BaseDashboard
     status: StatusField,
     store: Field::BelongsTo,
     created_at: Field::DateTime,
-    updated_at: Field::DateTime,
+    updated_at: Field::DateTime
   }.freeze
 
   # COLLECTION_ATTRIBUTES

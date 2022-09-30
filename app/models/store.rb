@@ -1,6 +1,9 @@
-class Store < ApplicationRecord
-    has_many :employees
-    validates_associated :employees
+# frozen_string_literal: true
 
-    validates :name, :address, presence: true
+#Store class
+class Store < ApplicationRecord
+  has_many :employees
+  validates_associated :employees
+
+  validates :name, :address, presence: true
 end
